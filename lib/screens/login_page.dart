@@ -6,6 +6,7 @@ import 'package:login_screen/widgets/login_button.dart';
 import 'package:login_screen/widgets/password_input.dart';
 import '../widgets/background_image.dart';
 
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -34,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 150,
                     child: Center(
                       child: Text(
-                        "Login Page",
+                        "Green Air",
                         style: heading,
                       ),
                     ),
