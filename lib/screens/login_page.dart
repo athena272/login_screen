@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Center(
                   child: Text(
                     "Green Air",
-                    style: Heading,
+                    style: heading,
                   ),
                 ),
               ),
@@ -41,23 +41,44 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   children: [
-                    //Email InputField
-                    EmailInput(
-                      icon: FontAwesomeIcons.solidEnvelope,
-                      hintText: "E-mail",
-                      inputType: TextInputType.emailAddress,
-                      inputAction: TextInputAction.next,
-                      inputController: _inputXController,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        //Email InputField
+                        EmailInput(
+                          icon: FontAwesomeIcons.solidEnvelope,
+                          hintText: "E-mail",
+                          inputType: TextInputType.emailAddress,
+                          inputAction: TextInputAction.next,
+                          inputController: _inputXController,
+                        ),
+                        //Password InputField
+                        PasswordInput(
+                          icon: FontAwesomeIcons.lock,
+                          hintText: "Password",
+                          inputType: TextInputType.number,
+                          inputAction: TextInputAction.done,
+                          inputController: _inputYController,
+                        ),
+                        Text(
+                          'Forgot Password?',
+                          style: keyBodyStyle,
+                        )
+                      ],
                     ),
-                    //Password InputField
-                    PasswordInput(
-                      icon: FontAwesomeIcons.lock,
-                      hintText: "Password",
-                      inputType: TextInputType.number,
-                      inputAction: TextInputAction.done,
-                      inputController: _inputYController,
-                    ),
-                    Text('Forgot Password?', style: keyBodyStyle,)
+                    Column(
+                      children: [
+                        Container(
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Login',
+                              style: keyBodyStyle,
+                            ),
+                          ),
+                        )
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -68,6 +89,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-
-
