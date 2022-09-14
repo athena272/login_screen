@@ -57,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                       inputAction: TextInputAction.done,
                       inputController: _inputYController,
                     ),
+                    Text('Forgot Password?', style: keyBodyStyle,)
                   ],
                 ),
               ),
