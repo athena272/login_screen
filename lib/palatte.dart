@@ -7,7 +7,7 @@ const TextStyle Heading =
     color: Colors.white
 );
 
-const TextStyle keyBoardStyle =
+const TextStyle keyBodyStyle =
     TextStyle(fontSize: 22, 
     color: Colors.white
 );
