@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_screen/palatte.dart';
 import 'package:login_screen/widgets/email_input.dart';
+import 'package:login_screen/widgets/login_button.dart';
 import 'package:login_screen/widgets/password_input.dart';
 import '../widgets/background_image.dart';
 
@@ -24,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
         BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
-          resizeToAvoidBottomInset: true,
+          resizeToAvoidBottomInset: false,
           body: Column(
             key: _formKey,
             children: [
@@ -63,20 +64,15 @@ class _LoginPageState extends State<LoginPage> {
                         Text(
                           'Forgot Password?',
                           style: keyBodyStyle,
-                        )
+                        ),
                       ],
                     ),
                     Column(
                       children: [
-                        Container(
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Text(
-                              'Login',
-                              style: keyBodyStyle,
-                            ),
-                          ),
-                        )
+                        SizedBox(
+                          height: 80,
+                        ),
+                        LoginButton(buttonText: 'Login',)
                       ],
                     )
                   ],
@@ -89,3 +85,5 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
+
