@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_screen/palatte.dart';
+import 'package:login_screen/widgets/email_input.dart';
+import 'package:login_screen/widgets/password_input.dart';
 import '../widgets/background_image.dart';
 
 class LoginPage extends StatefulWidget {
@@ -22,6 +24,7 @@ class _LoginPageState extends State<LoginPage> {
         BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
+          resizeToAvoidBottomInset: true,
           body: Column(
             key: _formKey,
             children: [
@@ -34,69 +37,25 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 100,
-              ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey[600]?.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            contentPadding:
-                                const EdgeInsets.symmetric(vertical: 20),
-                            border: InputBorder.none,
-                            prefixIcon: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 20),
-                              child: Icon(
-                                FontAwesomeIcons.solidEnvelope,
-                                color: Colors.white,
-                                size: 30,
-                              ),
-                            ),
-                            hintText: "E-mail",
-                            hintStyle: keyBoardStyle,
-                          ),
-                          style: keyBoardStyle,
-                          textInputAction: TextInputAction.next,
-                          keyboardType: TextInputType.emailAddress,
-                          controller: _inputXController,
-                        ),
-                      ),
+                    //Email InputField
+                    EmailInput(
+                      icon: FontAwesomeIcons.solidEnvelope,
+                      hintText: "E-mail",
+                      inputType: TextInputType.emailAddress,
+                      inputAction: TextInputAction.next,
+                      inputController: _inputXController,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[600]?.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          contentPadding:
-                              const EdgeInsets.symmetric(vertical: 20),
-                          border: InputBorder.none,
-                          prefixIcon: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            child: Icon(
-                              FontAwesomeIcons.solidEnvelope,
-                              color: Colors.white,
-                              size: 30,
-                            ),
-                          ),
-                          hintText: "Password",
-                          hintStyle: keyBoardStyle,
-                        ),
-                        style: keyBoardStyle,
-                        textInputAction: TextInputAction.next,
-                        keyboardType: TextInputType.text,
-                        controller: _inputYController,
-                      ),
+                    //Password InputField
+                    PasswordInput(
+                      icon: FontAwesomeIcons.lock,
+                      hintText: "Password",
+                      inputType: TextInputType.number,
+                      inputAction: TextInputAction.done,
+                      inputController: _inputYController,
                     ),
                   ],
                 ),
@@ -108,3 +67,6 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
+
+
