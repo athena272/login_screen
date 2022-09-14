@@ -26,64 +26,85 @@ class _LoginPageState extends State<LoginPage> {
         Scaffold(
           backgroundColor: Colors.transparent,
           resizeToAvoidBottomInset: false,
-          body: Column(
-            key: _formKey,
-            children: [
-              Container(
-                height: 150,
-                child: Center(
-                  child: Text(
-                    "Green Air",
-                    style: heading,
+          body: SingleChildScrollView(
+            child: SafeArea(
+              child: Column(
+                children: [
+                  Container(
+                    height: 150,
+                    child: Center(
+                      child: Text(
+                        "Green Air",
+                        style: heading,
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Column(
                       children: [
-                        //Email InputField
-                        EmailInput(
-                          icon: FontAwesomeIcons.solidEnvelope,
-                          hintText: "E-mail",
-                          inputType: TextInputType.emailAddress,
-                          inputAction: TextInputAction.next,
-                          inputController: _inputXController,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            //Email InputField
+                            EmailInput(
+                              icon: FontAwesomeIcons.solidEnvelope,
+                              hintText: "E-mail",
+                              inputType: TextInputType.emailAddress,
+                              inputAction: TextInputAction.next,
+                              inputController: _inputXController,
+                            ),
+                            //Password InputField
+                            PasswordInput(
+                              icon: FontAwesomeIcons.lock,
+                              hintText: "Password",
+                              inputType: TextInputType.number,
+                              inputAction: TextInputAction.done,
+                              inputController: _inputYController,
+                            ),
+                            Text(
+                              'Forgot Password?',
+                              style: keyBodyStyle,
+                            ),
+                          ],
                         ),
-                        //Password InputField
-                        PasswordInput(
-                          icon: FontAwesomeIcons.lock,
-                          hintText: "Password",
-                          inputType: TextInputType.number,
-                          inputAction: TextInputAction.done,
-                          inputController: _inputYController,
-                        ),
-                        Text(
-                          'Forgot Password?',
-                          style: keyBodyStyle,
-                        ),
+                        Column(
+                          children: [
+                            SizedBox(
+                              height: 75,
+                            ),
+                            LoginButton(
+                              buttonText: 'Login',
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: Colors.white,
+                                    width: 1,
+                                  ),
+                                ),
+                              ),
+                              child: Text("Create a new account",
+                                  style: keyBodyStyle),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                          ],
+                        )
                       ],
                     ),
-                    Column(
-                      children: [
-                        SizedBox(
-                          height: 80,
-                        ),
-                        LoginButton(buttonText: 'Login',)
-                      ],
-                    )
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ],
     );
   }
 }
-
-
