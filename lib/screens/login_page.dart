@@ -94,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         style: keyBoardStyle,
                         textInputAction: TextInputAction.next,
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.text,
                         controller: _inputYController,
                       ),
                     ),
