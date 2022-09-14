@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 150,
                     child: Center(
                       child: Text(
-                        "Green Air",
+                        "Login Page",
                         style: heading,
                       ),
                     ),
