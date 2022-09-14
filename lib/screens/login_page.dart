@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:login_app/palatte.dart';
+import 'package:login_screen/palatte.dart';
 import '../widgets/background_image.dart';
 
 class LoginPage extends StatefulWidget {
